@@ -6,8 +6,8 @@ using namespace std;
 
 class Package {
 public:
-	Package(string& n, string& a, string& c, string& s, string& z, double& w, double& cost //lowercase for sender
-			, string& N, string& A, string& C, string& S, string& Z //uppercase for receiver
+	Package(const string& n, const  string& a, const  string& c, const  string& s, const  string& z, const  double& w, const  double& cost //lowercase for sender
+			, const  string& N, const  string& A, const  string& C, const  string& S, const  string& Z //uppercase for receiver
 		) :senderName(n), senderAddress(a), senderCity(c), senderState(s), senderZIP(z),
 		receiverName(N), receiverAddress(A), receiverCity(C), receiverState(S), receiverZIP(Z),
 		weight(w), CostPerOunce(cost) {};
