@@ -6,8 +6,9 @@
 
 class OvernightPackage : public Package {
 public:
-	OvernightPackage(string n, string a, string c, string s, string z, double w, double cost, double fee)
-		: Package(n, a, c, s, z, w, cost), additionalFee(fee) {};
+	OvernightPackage (string& n, string& a, string& c, string& s, string& z, double& w, double& cost
+		, string& N, string& A, string& C, string& S, string& Z, double& fee)
+		: Package(n, a, c, s, z, w, cost, N, A, C, S, Z), additionalFee(fee) {};
 
 
 	~OvernightPackage() {};

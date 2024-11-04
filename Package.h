@@ -6,18 +6,31 @@ using namespace std;
 
 class Package {
 public:
-	Package(string n, string a, string c, string s, string z, double w, double cost) :name(n)
-		, address(a), city(c), state(s), ZIP(z), weight(w), CostPerOunce(cost) {};
+	Package(string& n, string& a, string& c, string& s, string& z, double& w, double& cost //lowercase for sender
+			, string& N, string& A, string& C, string& S, string& Z //uppercase for receiver
+		) :senderName(n), senderAddress(a), senderCity(c), senderState(s), senderZIP(z),
+		receiverName(N), receiverAddress(A), receiverCity(C), receiverState(S), receiverZIP(Z),
+		weight(w), CostPerOunce(cost) {};
 
 	virtual ~Package() {};
 
+
+
+	double staticCalculateCost() {
+		return weight * CostPerOunce;
+
+	}
+
 	virtual double calculateCost() {
 		return weight * CostPerOunce;
-	};
+	}
+
 
 protected:
 
-	string name, address, city, state, ZIP;
+	string senderName, senderAddress, senderCity, senderState, senderZIP;
+	string receiverName, receiverAddress, receiverCity, receiverState, receiverZIP;
+
 	double weight;
 	double CostPerOunce;
 
