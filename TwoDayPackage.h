@@ -7,17 +7,15 @@
 class TwoDayPackage : public Package {
 
 public:
-	TwoDayPackage(const string& n, string& a, const  string& c, const  string& s, const string& z, const double& w, const  double& cost
-		, const  string& N, const  string& A, const  string& C, const  string& S, const  string& Z,
-		const double& fee)
-		:Package(n, a, c, s, z, w, cost,N,A,C,S,Z), flatFee(fee) {};
+	TwoDayPackage(const string& n = "", const string& a = "", const  string& c = "", const  string& s = "", const string& z = "",
+		const double& w=0, const  double& cost=0
+		, const string& N = "", const  string& A = "", const  string& C = "", const  string& S = "", const  string& Z = "",
+		const double& fee=0)
+		;
 
-	~TwoDayPackage() {};
+	~TwoDayPackage();
 
-
-	double calculateCost() final override {
-		return flatFee + weight * CostPerOunce;
-	}
+	double calculateCost() final override;
 
 private:
 	double flatFee;

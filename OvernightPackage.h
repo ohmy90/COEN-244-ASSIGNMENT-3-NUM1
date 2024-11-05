@@ -6,17 +6,17 @@
 
 class OvernightPackage : public Package {
 public:
-	OvernightPackage (const string& n, const  string& a, const  string& c, const string& s, const string& z, const double& w, const  double& cost
-		, const string& N, const string& A, const  string& C, const  string& S, const  string& Z, const  double& fee)
-		: Package(n, a, c, s, z, w, cost, N, A, C, S, Z), additionalFee(fee) {};
+	OvernightPackage(const string& n = "", const  string& a = "", const  string& c = "", const string& s = "", const string& z = ""
+		, const double& w=0, const  double& cost=0
+		, const string& N = "", const string& A = "", const  string& C = "", const  string& S = "", const  string& Z = "", const  double& fee=0);
 
 
-	~OvernightPackage() {};
+	~OvernightPackage();
 
-	double calculateCost() final override {
-		return (additionalFee + CostPerOunce)* weight;
+	double calculateCost() final override;
 
-	}
+
+
 
 private:
 	double additionalFee;//per ounce
